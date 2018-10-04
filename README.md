@@ -2,7 +2,7 @@
 # twitter-link-collector
 
 This program periodically polls the twitter home timeline, filters the tweets containing an url,
-and email the url and title in batches (of 10)
+and emails the url and title to the email address configured in application.properties
 
 
 ### Prerequisites
@@ -37,7 +37,7 @@ https://cloud.google.com/compute/docs/gcloud-compute/
 mvnw clean install dockerfile:build
 ```
 
-### Optional - run the docket image locally
+### Optional - run the docker image locally
 
 ```
 docker run -it --rm -p 8080:8080 megalit/twitter-link-collector:latest

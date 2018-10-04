@@ -12,7 +12,6 @@ import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 import twitter4j.Paging
 import java.util.*
-import java.util.concurrent.TimeUnit.SECONDS
 import java.util.logging.Logger
 import twitter4j.TwitterFactory
 import twitter4j.Twitter
@@ -50,7 +49,6 @@ class TwitterFeed @Autowired constructor(
 
         mailer = Mailer(config.sendgridfrom, config.sendgridto, config.sendgridid)
         mailer.doSendMail("twitter link emailer starting up", Content("text/html", "n/a"))
-
 
         twitter = TwitterFactory.getSingleton()
         twitter.setOAuthConsumer(config.consumerkey, config.consumersecret)
